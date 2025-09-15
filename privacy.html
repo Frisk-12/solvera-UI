@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trasparenza & Privacy — SOLVERA</title>
+  <meta name="description" content="Informativa trasparente: principi, dati trattati, basi giuridiche, tempi di conservazione, diritti, contatti." />
+  <link rel="icon" href="data:," />
+  <style>
+    :root{
+      --bg:#0e0f12; --panel:#14171b; --text:#e8ebf0; --muted:#a8b0bd;
+      --primary:#6ec1e4; --primary-weak:#1d2a33; --radius:14px; --radius-sm:10px;
+      --shadow:0 10px 30px rgba(0,0,0,.25); --maxw:1080px;
+    }
+    *,*::before,*::after{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:var(--bg); color:var(--text); line-height:1.6;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    a{ color:var(--primary); text-decoration:none; } a:hover{text-decoration:underline;}
+    .container{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:20px; }
+
+    header.site-header{ position:sticky; top:0; z-index:1000; backdrop-filter:blur(8px);
+      background:rgba(14,15,18,.7); border-bottom:1px solid rgba(255,255,255,.06); }
+    .nav{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0; }
+    .brand{ display:flex; align-items:center; gap:12px; }
+    .brand__logo{ inline-size:36px; block-size:36px; border-radius:50%; object-fit:cover; }
+    .brand__name{ font-weight:700; letter-spacing:.2px; }
+    .nav__links{ display:flex; align-items:center; gap:22px; }
+    .nav__links a{ color:var(--text); opacity:.9; font-weight:500; }
+    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+      padding:10px 14px; border-radius:var(--radius-sm); font-weight:600; border:1px solid transparent;
+      background:var(--primary); color:#051017; transition:.2s ease; }
+    .btn:hover{ filter:brightness(1.05); transform:translateY(-1px); }
+    .btn--ghost{ background:transparent; color:var(--text); border-color:rgba(255,255,255,.12); }
+    .btn--ghost:hover{ background:rgba(255,255,255,.06); }
+    .nav__toggle{ display:none; }
+    @media (max-width:900px){
+      .nav__links{ display:none; }
+      .nav__toggle{ display:inline-flex; align-items:center; gap:8px; }
+      .nav--open .nav__links{ position:absolute; left:0; right:0; top:64px; padding:16px 20px;
+        display:flex; flex-direction:column; gap:12px; background:rgba(14,15,18,.98);
+        border-bottom:1px solid rgba(255,255,255,.06); }
+    }
+
+    main{ padding:48px 0; }
+    .page-title{ font-size: clamp(24px, 3vw, 36px); margin:0 0 8px; }
+    .page-sub{ color:var(--muted); margin:0 0 28px; max-width:70ch; }
+    .grid{ display:grid; grid-template-columns: 1fr 2fr; gap:24px; }
+    @media (max-width:900px){ .grid{ grid-template-columns:1fr; } }
+
+    .toc{ background:var(--panel); border:1px solid rgba(255,255,255,.07);
+      border-radius:var(--radius); padding:16px; box-shadow:var(--shadow); }
+    .toc h3{ margin-top:0; font-size:1.05rem; }
+    .toc a{ display:block; padding:6px 0; }
+
+    .card{ background:var(--panel); border:1px solid rgba(255,255,255,.07);
+      border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); margin-bottom:16px; }
+    .card h2{ margin:0 0 10px; font-size:1.2rem; }
+    .muted{ color:var(--muted); }
+
+    footer{ border-top:1px solid rgba(255,255,255,.06); color:var(--muted); }
+    .footer__grid{ display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:18px; padding:28px 0; }
+    .footer__tiny{ font-size:.9rem; padding:12px 0 28px; }
+    @media (max-width:900px){ .footer__grid{ grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav" id="nav">
+      <a class="brand" href="index.html" aria-label="Vai alla home">
+        <img src="scritta_logo.png" alt="Logo SOLVERA" class="brand__logo" />
+        <span class="brand__name">SOLVERA</span>
+      </a>
+      <nav class="nav__links" aria-label="Navigazione principale">
+        <a href="index.html#servizi">Servizi</a>
+        <a href="index.html#usecase">Use Case</a>
+        <a href="privacy.html" aria-current="page">Trasparenza & Privacy</a>
+        <a class="btn btn--ghost" href="index.html#contatti">Parla con noi</a>
+      </nav>
+      <button class="nav__toggle btn btn--ghost" aria-expanded="false">☰ Menu</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 class="page-title">Trasparenza & Privacy</h1>
+      <p class="page-sub">Informativa semplificata sul trattamento dei dati personali (versione bozza). Il testo completo verrà adattato sul tuo caso specifico.</p>
+
+      <div class="grid">
+        <!-- TOC -->
+        <aside class="toc" aria-label="Indice">
+          <h3>Indice</h3>
+          <a href="#principi">1. Principi</a>
+          <a href="#dati">2. Dati che trattiamo</a>
+          <a href="#finalita">3. Finalità e basi giuridiche</a>
+          <a href="#conservazione">4. Tempi di conservazione</a>
+          <a href="#terze-parti">5. Condivisione con terze parti</a>
+          <a href="#sicurezza">6. Sicurezza</a>
+          <a href="#diritti">7. I tuoi diritti</a>
+          <a href="#contatti">8. Contatti del titolare</a>
+        </aside>
+
+        <!-- Contenuti -->
+        <section>
+          <article class="card" id="principi">
+            <h2>1. Principi</h2>
+            <p class="muted">Minimizzazione dei dati, finalità determinate, conservazione limitata, integrità e riservatezza, trasparenza.</p>
+          </article>
+
+          <article class="card" id="dati">
+            <h2>2. Dati che trattiamo</h2>
+            <ul>
+              <li>Contatti forniti volontariamente (nome, email, recapiti).</li>
+              <li>File operativi necessari (es. CSV vendite) per l’erogazione dei servizi.</li>
+              <li>Metadati tecnici minimi (es. log di sicurezza).</li>
+            </ul>
+          </article>
+
+          <article class="card" id="finalita">
+            <h2>3. Finalità e basi giuridiche</h2>
+            <ul>
+              <li>Erogazione dei servizi richiesti — <em>contratto/rapporti precontrattuali</em>.</li>
+              <li>Amministrazione e fatturazione — <em>obbligo legale</em>.</li>
+              <li>Comunicazioni operative — <em>legittimo interesse</em> (con bilanciamento e opt-out).</li>
+            </ul>
+          </article>
+
+          <article class="card" id="conservazione">
+            <h2>4. Tempi di conservazione</h2>
+            <p>I dati sono conservati per il tempo strettamente necessario alle finalità indicate o quanto richiesto dalla normativa (es. fiscale).</p>
+          </article>
+
+          <article class="card" id="terze-parti">
+            <h2>5. Condivisione con terze parti</h2>
+            <p>Eventuali fornitori/strumenti (es. hosting) saranno elencati qui, con ruolo e luogo del trattamento. Nessuna cessione non necessaria.</p>
+          </article>
+
+          <article class="card" id="sicurezza">
+            <h2>6. Sicurezza</h2>
+            <p>Misure tecniche e organizzative adeguate alla natura dei dati trattati (controllo accessi, cifratura, backup essenziali).</p>
+          </article>
+
+          <article class="card" id="diritti">
+            <h2>7. I tuoi diritti</h2>
+            <p>Accesso, rettifica, cancellazione, portabilità, limitazione e opposizione. Per esercitarli, vedi i contatti sotto.</p>
+          </article>
+
+          <article class="card" id="contatti">
+            <h2>8. Contatti del titolare</h2>
+            <p>Email: <a href="mailto:solverarisponde@gmail.com">solverarisponde@gmail.com</a><br />Telefono: <a href="tel:+393498835605">+39 349 883 5605</a></p>
+          </article>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footer__grid">
+      <div>
+        <div class="brand">
+          <img src="scritta_logo.png" alt="Logo SOLVERA" class="brand__logo" />
+          <span class="brand__name">SOLVERA</span>
+        </div>
+        <p style="margin:8px 0 0" class="muted">Soluzioni semplici e concrete per microimprese.</p>
+      </div>
+      <div>
+        <strong>Link rapidi</strong>
+        <nav aria-label="Link rapidi">
+          <p><a href="index.html#servizi">Servizi</a></p>
+          <p><a href="index.html#usecase">Use Case</a></p>
+          <p><a href="privacy.html">Trasparenza & Privacy</a></p>
+          <p><a href="index.html#contatti">Contatti</a></p>
+        </nav>
+      </div>
+      <div>
+        <strong>Contatti</strong>
+        <p><a href="mailto:solverarisponde@gmail.com">solverarisponde@gmail.com</a></p>
+        <p><a href="tel:+393498835605">+39 349 883 5605</a></p>
+      </div>
+    </div>
+    <div class="container footer__tiny">
+      © <span id="year"></span> SOLVERA. Tutti i diritti riservati. · <a href="privacy.html">Privacy</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const nav = document.getElementById('nav');
+    const toggle = nav.querySelector('.nav__toggle');
+    const links = nav.querySelector('.nav__links');
+    toggle?.addEventListener('click', () => {
+      const open = nav.classList.toggle('nav--open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links?.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=>nav.classList.remove('nav--open')));
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
